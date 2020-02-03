@@ -182,7 +182,129 @@ print(len(myString)) # posicao da ultima letra
 print(myString.index('o')) # indice de uma letra
 print(myString.isnumeric()) # se o conteudo é númerico
 print(myString.isalpha()) # se o conteudo é alfabético
-print(myString[4]) # retorna um caractere na posição
+
+#   h   e   l   l   o       w  o  r  l  d     a  l  l  !
+#   0   1   2   3   4   5   6  7  8  9 10 11 12 13 14 15
+# -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 
+
+print(myString[4]) # retorna um caractere na posição do índice 4
+print(myString[0]) # retorna um caractere na posição do índice 0
+print(myString[-2]) # retorna um caractere na posição do índice -2
+print(myString[-10]) # retorna um caractere na posição do índice -2
+
+# Concatenações
+print('My first app: ' + myString)
+print('My first app:', myString)
+print(f'My first app: {myString}')
+print('My first app: {myString}'.format(myString))
+print('My first app: {0}'.format(myString))
 ```
 
-01:20:00
+## Trabalhando com números
+
+Crie um arquivo chamado Numbers.py
+
+```python
+# 10 inteiro
+# 14.4 decimal de ponto flutuante
+
+print(type(10)) # tipo int
+print(type(14.4)) # tipo float
+print(3 + 3) # soma
+print(3 - 1) # subtração
+print(3 / 5) # divisão
+print(5 * 6) # multiplicação
+print(5.0 * 5) # multiplicação com decimal
+print(2**3) # potenciação 2³
+print( 3 / 2) # divisão
+print(3 // 2) # divisão inteira
+print(3 % 2) # resto da divisão
+
+# precedência
+print(20 - 10 * 5 ** 2)
+print(5 ** 2) # primeiro a potenciação
+print(-10 * 25) # depois a multiplicação
+print(20 - 250) # e por último a subtração
+
+# precedência por parenteses
+print((20 - 10) * (5 ** 2))
+print(20 - 10) # calcula o primeiro parenteses
+print(5 ** 2) # calcula o segundo parentese
+print(10 * 25) # calcula o resultado dos dois parenteses
+```
+
+## Solicitando antrada do usuários
+
+Crie um arquivo chamado input.py
+
+```python
+age = input('Insert your age: ')
+print(age) # exibe a entrada
+print(type(age)) # tipo string
+newAge = int(age) + 5 # converter para inteiro para calcular
+print(type(int(age))) # tipo convertido
+print(newAge) # imprimir o resultado
+```
+
+## trabalhando com listas
+
+Crie um arquivo chamado lists.py
+
+```python
+# listas simples
+demoList = [1, 'hello', 1.34, True, [1,2,3]]
+print(demoList)
+
+# usando o construtor
+numberList = list((1, 2, 3, 4))
+print(numberList)
+print(type(numberList))
+
+
+# Intervalos
+r = list(range(1, 100))
+print(r)
+
+colors = ['red', 'green', 'blue']
+print(colors) # exibe os itens
+print(type(colors)) # mostra o tipo
+print(dir(colors)) # ajuda
+print(len(colors)) # conta itens
+print(colors[2]) # buscando um item índice
+print('green' in colors) # Se um elemento existe
+print('orange' in colors)
+colors[1] = 'yellow' # editando um item
+print(colors)
+colors.append('violet') # adicionando um item
+colors.extend(('green', 'silver')) # adicionando vários
+print(colors)
+colors.insert(1, 'white') # adiciona um elemento em uma posição
+colors.insert(len(colors), 'black') # adiciona um item no final
+print(colors)
+colors.pop() # excluir o ultimo item
+print(colors)
+colors.pop()
+colors.pop()
+print(colors)
+colors.remove('white') # remove por nome
+print(colors)
+colors.pop(0) # remove por índice
+print(colors)
+colors.sort() # ordenar asc
+print(colors)
+colors.sort(reverse=True) # ordernar desc
+print(colors)
+print(colors.index('yellow')) # exibir o índice de um item
+colors.insert(len(colors), 'blue') # adiciona um item no final
+colors.insert(len(colors), 'blue') # adiciona um item no final
+colors.insert(len(colors), 'violet') # adiciona um item no final
+print(colors.count('blue')) # contar por tipo
+print(colors.count('violet')) # contar por tipo
+print(colors.count('yellow')) # contar por tipo
+```
+
+# Parte 2
+
+## Tuplas
+
+01:59:00
