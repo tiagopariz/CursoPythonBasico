@@ -29,23 +29,27 @@ No Visual Studio instale as extensões:
 
 - Python da Microsoft
 
-## Crie um arquivo chamado commands.py
+## Usando o console
 
-```python
+Crie um arquivo chamado commands.py
+
+```powershell
 # Comando para verão
 python --version
 
-#Abrir o interpretador
+# Abrir o interpretador
 python
 
-#Cálculo simples
+# Cálculo simples
 3 + 3
 
-#sair do interpretador
+# sair do interpretador
 exit()
 ```
 
-## Crie um arquivo chamado helloworld.py
+## Meu primeiro programa 
+
+Crie um arquivo chamado helloworld.py
 
 ```python
 # No interpretador de linha de comando digite 
@@ -159,7 +163,7 @@ BookName = 'Clean code' # Pascal case
 PI = 3.1416
 ```
 
-## Trabalhando com strings
+## Strings
 
 Crie uma arquivo chamado strings.py
 
@@ -200,7 +204,7 @@ print('My first app: {myString}'.format(myString))
 print('My first app: {0}'.format(myString))
 ```
 
-## Trabalhando com números
+## Números
 
 Crie um arquivo chamado Numbers.py
 
@@ -233,7 +237,7 @@ print(5 ** 2) # calcula o segundo parentese
 print(10 * 25) # calcula o resultado dos dois parenteses
 ```
 
-## Solicitando antrada do usuários
+## Solicitando a entrada do usuário
 
 Crie um arquivo chamado input.py
 
@@ -246,7 +250,7 @@ print(type(int(age))) # tipo convertido
 print(newAge) # imprimir o resultado
 ```
 
-## trabalhando com listas
+## Listas
 
 Crie um arquivo chamado lists.py
 
