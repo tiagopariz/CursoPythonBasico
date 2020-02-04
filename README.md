@@ -311,4 +311,52 @@ print(colors.count('yellow')) # contar por tipo
 
 ## Tuplas
 
-01:59:00
+Crie um arquivo chamado tuples.py
+
+Mais rápidas e não se pode editar
+
+```python
+x = (1, 2, 3) # uma tupla
+print(type(x))
+print(x)
+y = tuple((1, 2, 3)) # tupla por construtor
+print(y)
+print(dir(y))
+x = (1)
+print(type(x))
+print(x) # não é uma tupla
+x = (1,) # é uma tupla
+print(type(x))
+print(x)
+x = (1, 2, 3, 4, 5)
+print(x[0]) # buscar por índice
+print(x[4])
+del x # excluir a tupla
+# print(x)
+locations = {
+    (35.6554646, 39.000): 'Tokyo',
+    (35.12545, 39.6565): 'New York'
+}
+print(locations)
+```
+
+## Sets
+
+Crie um arquivo chamado sets.py
+
+```python
+colors = {'Red', 'Green', 'Blue'}
+print(colors)
+print('Green' in colors)
+colors.add('Violet')
+print(colors)
+colors.remove('Red')
+print(colors)
+colors.clear()
+print(colors)
+del colors
+```
+
+# Dicionários
+
+02:11:00
