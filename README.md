@@ -1,5 +1,4 @@
 # Python para principiantes
-Curso Python para Principiantes - https://www.youtube.com/watch?v=chPhlsHoEPo (Canal Fazt) 
 
 # Parte 1
 
@@ -671,3 +670,119 @@ init(convert=True)
 print("Hello World!")
 print(Fore.RED + "Hello world!")
 ```
+
+# Parte 3
+
+## Classes
+
+Crie um arquivo chamado classes.py
+
+```python
+# Classe básica
+class My_Object(object):
+    # Construtor
+    def  __init__(self):
+        # Atributos
+        self.nome = 'Tiago'
+        self.idade = '36'
+        print('Construtor chamado com sucesso')
+    # Métodos
+    def imprime(self):
+        print('Olá meu nome é {} e eu tenho {}'.format(self.nome, self.idade))
+
+# Instanciando
+Tiago = My_Object()
+
+# Chamando o método
+Tiago.imprime()
+
+# Passando parâmetros no construtor
+class My_Object2:
+    def __init__(self, n, i):
+        self.nome = n
+        self.idade = i
+        print("Meu nome é {} e eu tenho {}".format(self.nome, self.idade))
+
+Ronald = My_Object2('Ronald', 38)
+
+# Passando parâmetros nos métodos
+# Classe básica
+class My_Object(object):
+    # Construtor
+    def  __init__(self):
+        # Atributos
+        self.nome = 'Tiago'
+        self.idade = '36'
+        print('Construtor chamado com sucesso')
+    # Métodos
+    def imprime(self):
+        print('Olá meu nome é {} e eu tenho {}'.format(self.nome, self.idade))
+
+# Instanciando
+Tiago = My_Object()
+
+# Exibindo os atributos
+print(Tiago.nome, Tiago.idade)
+
+# Chamando o método
+Tiago.imprime()
+
+# Passando parâmetros no construtor
+class My_Object2:
+    def __init__(self, n, i):
+        self.nome = n
+        self.idade = i
+        print("Meu nome é {} e eu tenho {}".format(self.nome, self.idade))
+
+Ronald = My_Object2('Ronald', 38)
+
+# Passando parâmetros nos métodos
+class My_Object3:
+    # Método que recebe dois parâmetros
+    def imprime(self, nome, idade):
+        print('Meu nome é {} e eu tenho {}'.format(nome, idade))
+    # Recebe e efetua um cálculo
+    def quanto_falta_pra_30(self, idade):
+        falta = 30 - idade
+        print('Faltam {} anos para 30'.format(falta))
+    # Recebe e retorna um valor
+    def que_ano_faco_30(self, anoatual, idade):
+        facoem = anoatual + (30 - idade)
+        return facoem
+    # Recebe argumentos sem um limite
+    def amigos(self, *args):
+        return args
+
+Eric = My_Object3()
+Eric.imprime('Eric', 15)
+Eric.quanto_falta_pra_30(15)
+print('Faço 30 em', Eric.que_ano_faco_30(2020, 15))
+print('Meus amigos:', Eric.amigos('Antonio', 'Margaret', 'Paulo'))
+```
+
+Crie uma classe chamada quadrado.py que calcule o quadrado
+
+```python
+class Quadrado:
+    def __init__(self, tamanho_lado):
+        self.tamanho_lado = tamanho_lado
+        self.area = self.tamanho_lado ** 2
+        print('Tamanho do lado:', self.tamanho_lado)        
+        print('Area:', self.area)
+    def alterar(self, novo_tamanho):
+        tamanho_lado = novo_tamanho
+        area = tamanho_lado ** 2
+        print('Tamanho do lado:', tamanho_lado)        
+        print('Area:', area)
+    
+MeuQuadrado = Quadrado(10)
+MeuQuadrado.alterar(20)
+```
+
+00:12:40
+
+# Referências
+
+Curso Python para Principiantes - https://www.youtube.com/watch?v=chPhlsHoEPo (Canal Fazt)
+
+Aulas Python - 059 - POO I: Sintaxe Básica, Construtor e Métodos - https://www.youtube.com/watch?v=lsPZTMJ9I6Q
