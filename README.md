@@ -779,10 +779,80 @@ MeuQuadrado = Quadrado(10)
 MeuQuadrado.alterar(20)
 ```
 
-00:12:40
+## Atributos
+
+Crie um arquivo chamado atributos.py
+
+```python
+class Atributo:
+    def __init__(self):
+        self.x = 0
+        self.y = 0
+
+MeuAtributo = Atributo()
+
+# Exibindo os valores dos atributos
+print(MeuAtributo.x)
+print(MeuAtributo.y)
+
+# Alterando os valore
+MeuAtributo.x = 5
+MeuAtributo.y = 7
+print(MeuAtributo.x)
+print(MeuAtributo.y)
+
+# Adicionando um novo atributo
+MeuAtributo.z = 8
+print(MeuAtributo.z)
+```
+
+## Associações e funções
+
+Crie um novo arquivo chamado associacoes.py
+
+```python
+# crio uma classe de cachorro com métodos
+class Cachorro:
+    def __init__(self, nome, cor):
+        self.nome = nome
+        self.cor = cor
+    def daAPatinha(self):
+        print('{} extendeu a patinha'.format(self.nome))
+    def latir(self):
+        print('AUAUAUAUAUAUAUAUAUAUAU')
+
+# crio uma classe de pessoa que recebe nome, peso e cão
+# o cão é uma associação com a classe cachorro
+class PessoaS2Animais:
+    def __init__(self, nome, peso, cao):
+        self.nome = nome
+        self.peso = peso
+        self.cao = cao
+    def treinar(self):
+        self.cao.daAPatinha()
+        self.cao.latir()
+
+# associa
+rex = Cachorro('Rex', 'Marrom')
+paulo = PessoaS2Animais('Paulo', 68, rex)
+
+# chamando os atributos das duas classes
+print(paulo.nome)
+print(paulo.peso)
+print(paulo.cao.nome)
+print(paulo.cao.cor)
+
+# chamando os metodos
+rex.daAPatinha()
+rex.latir()
+paulo.treinar()
+```
+
 
 # Referências
 
 Curso Python para Principiantes - https://www.youtube.com/watch?v=chPhlsHoEPo (Canal Fazt)
 
 Aulas Python - 059 - POO I: Sintaxe Básica, Construtor e Métodos - https://www.youtube.com/watch?v=lsPZTMJ9I6Q
+
+Aulas Python - 060 - POO II: Atributos, Associações e Funções - https://www.youtube.com/watch?v=5FCA0SDvxcI
