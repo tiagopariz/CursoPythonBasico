@@ -357,6 +357,317 @@ print(colors)
 del colors
 ```
 
-# Dicionários
+## Dicionários
 
-02:11:00
+Adicione um arquivo chamado dictionary.py
+
+```python
+# list
+cart = [
+    ["book1", 3, 4.99],
+    ["book2", 3, 6.99],
+    ["book3", 3, 15.99]
+]
+
+# Dictionary
+product = {
+    "name": "Book1",
+    "quantity": 3,
+    "price": 3
+}
+
+print(type(product)) # <class 'dict'>
+
+person = {
+    "first_name": "ryan",
+    "last_name": "ray"
+}
+
+print(type(person)) # <class 'dict'>
+print(dir(person)) # help
+print(person.keys())
+print(person.items())
+
+person.clear()
+print(person)
+del person;
+# print(person)
+
+products = [
+    {"name": "Book", "price": 10.99},
+    {"name": "Laptop", "price": 100.99}
+]
+
+print(products)
+```
+
+## Conditional
+
+Crie um arquivo chamado conditionals.py
+
+```python
+# 3 > 2 = True
+# 2 > 3 = False
+# 2 < 3 = True
+# 3 == 3 = True
+# 3 == 4 = False
+# name == 'Tiago'
+
+x = 20
+print('x =', x)
+if x < 30: 
+    print("x is less than 30")
+
+x = 40
+print('x =', x)
+if x > 30: 
+    print("x is greater than 30")
+
+x = 30
+print('x =', x)
+if x == 30:
+    print("x is 30")
+
+# senão
+x = 15
+print('x =', x)
+if x < 20:
+    print('x is less then 20')
+else:
+    print('x is greater then 20')
+
+# textos
+
+color = 'Blue'
+
+if color == 'Red':
+    print('The color is Red')
+else:
+    print('Any color')
+
+# senão se
+color = 'Blue'
+
+if color == 'Red':
+    print('The color is Red')
+elif color == 'Blue':
+    print('The color is Blue')
+else:
+    print('Any color')
+
+# Vários se
+
+name = "John"
+lastname = "Carter"
+
+if name == "John":
+    if lastname == "Carter":
+        print("You are", name, lastname)
+    else:
+        print('You are not John')
+else:
+    print('You are not Jhon')
+
+# and, or e not
+
+x = 3
+if x > 2 and x <= 10:
+    print("x is greater than two and less than or equal to ten")
+
+if x > 2 or x <= 20:
+    print("x is greater than two or less than or equal to twenty")
+
+if (not(x == 10)):
+    print("x is not equal to ten")
+```
+
+## Laços
+
+Crie um arquivo chamado loops.py
+
+```python
+# lista
+
+foods = ['Apples', 'Brad', 'Cheese', 'Milk', 'Bananas', 'Grapes']
+
+print(foods)
+print(foods[0])
+print(foods[1])
+print(foods[2])
+print(foods[2])
+print(foods[4])
+
+# usando for
+
+for food in foods:
+    print(food)
+
+# usando for e if
+
+for food in foods:
+    if food == 'Cheese':
+        print("You have to buy this:", food)
+    print(food)
+
+# Parando o laço
+
+for food in foods:
+    if food == 'Apples':
+        break
+    print(food)
+
+# Continuando o laço
+
+for food in foods:
+    if food == 'Bread':
+        continue
+    print(food)
+
+# Usando um intervalo
+
+for number in range(1,8):
+    print(number)
+
+for letter in 'Hello':
+    print(letter)
+
+# Usando o while
+
+count = 4
+
+while count <= 10:
+    print(count)
+    count = count + 1
+```
+
+## Funções
+
+Crie um arquivo chamado functions.py
+
+```python
+# Função
+
+print("Função que imprime na tela")
+dir({"Função que retorna ajuda"})
+type(["Função que retorna o tipo", 1])
+len('Hello')
+
+# Criando a própria função
+
+def hello():
+    print('Hello world!')
+
+# Chamando a função
+
+hello()
+
+# Passando parâmetros e sobrecarregando
+
+def hello(name):
+    print('Hello', name)
+
+hello('Tiago')
+hello('Lucas')
+
+# Definindo uma valor padrão
+
+def congrat(name, nickname='no'):
+    print('Hello', name, 'Nick:', nickname)
+
+congrat('Igor', 'ig')
+congrat('Valentina')
+
+# Usando cálculos em funções
+
+def add(numberOne, numberTwo):
+    return numberOne + numberTwo
+
+print(add(10, 30))
+print(add(600, 10))
+
+# Funções lambda
+
+add = lambda numberOne, numberTwo: numberOne + numberTwo
+
+print(add(10, 30))
+```
+
+## Modulos
+
+Crie um arquivo chamado modules.py
+
+```python
+# Módulos: own modules, thirdy party modules e python modules
+# Python Module Index: https://docs.python.org/3/py-modindex.html
+# PyPI: https://pypi.org/
+
+# Usando o módulo do Python datetime 
+# Basic date and time types: https://docs.python.org/3/library/datetime.html
+import datetime
+
+print(datetime.date.today())
+
+# Importar apenas uma função
+
+from datetime import timedelta
+
+print(datetime.timedelta(minutes=70))
+print(datetime.timedelta(minutes=100))
+```
+
+Crie um arquivo chamado matematica.py
+
+```python
+def add(n1, n2):
+    print(n1 + n2)
+
+def subtract(n1, n2):
+    print(n1 - n2)
+```
+
+Crie um arquivo chamado calculos.py
+
+```python
+import matematica
+
+matematica.add(1, 2)
+matematica.subtract(1, 2)
+
+from matematica import add
+
+add(1, 2)
+
+from matematica import add, subtract
+
+subtract(1, 2)
+add(1, 2)
+```
+
+## Instalando um módulo de terceiros
+
+Vá em https://pypi.org/project/colorama/ e veja o comando para executar.
+
+Verifique a versão do pip
+
+```powershell
+pip --version
+```
+
+Execute o comando para instalar o módulo
+
+```powershell
+pip install colorama
+```
+
+Crie o arquivo cores.py
+
+```python
+# importe o módulo colorama
+import colorama
+# ou importe apenas o que irá usar
+from colorama import Fore, Style, init
+
+init(convert=True)
+print("Hello World!")
+print(Fore.RED + "Hello world!")
+```
