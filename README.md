@@ -848,6 +848,145 @@ rex.latir()
 paulo.treinar()
 ```
 
+# Parte 4
+
+## Usando try...Except
+
+Crie um arquivo chamado erros.py
+
+```python
+# tratando uma exceção simples
+class Calculadora:
+    def __init__(self, numero1, numero2):
+        self.numero1 = numero1
+        self.numero2 = numero2
+        self.resultado = 0
+    def divisao(self):
+        try:
+            self.resultado = self.numero1 / self.numero2
+            print(self.resultado)
+        except:
+            print('Erro ao dividir')
+
+calc = Calculadora(10, 0)
+print(calc.divisao()) 
+calc.numero2 = 2
+print(calc.divisao())
+
+# usando mais de um try
+class Planilha:
+    def __init__(self, valorA, valorB, linhas):
+        try:
+            posicao = 1
+            self.valorA = int(valorA)
+            self.valorB = int(valorB)
+            while posicao <= linhas:
+                try:
+                    self.valorA = self.valorA + posicao
+                    self.valorB = self.valorB + posicao
+                    print('ValorA{}:'.format(posicao), 
+                          self.valorA,
+                          'ValorB{}:'.format(posicao),
+                          self.valorB,
+                          'A / B =', self.valorA / self.valorB)
+                except:
+                    print('Erro ao dividir por zero')
+                    break
+                posicao = posicao + 1
+        except:
+            print('Erro, Digite apenas números')
+
+planilha = Planilha(10, 2, 5)
+planilha = Planilha(3, -1, 5)
+```
+
+## Capturando o erro do sistema
+
+Crie um arquivo chamado errossistema.py
+
+```python
+import sys
+
+class Calculadora:
+    def dividir(self, numero1, numero2):
+        try:
+            print(numero1 / numero2)
+        except:
+            print('Error {}'.format(sys.exc_info()[0]))
+            print('Error {}'.format(sys.exc_info()[1]))
+            print('Error {}'.format(sys.exc_info()[2]))
+
+calc = Calculadora()
+calc.dividir(10, 0)
+```
+
+## Tratando exceções específicas
+
+Crie um arquivo chamado exceptions.py
+
+```python
+import sys
+
+class Calculadora:
+    def __init__(self):
+        super().__init__()
+    def dividir(self, n1, n2):
+        try:
+            print(n1 / n2)
+        except ZeroDivisionError as error:
+            print('Divisão por zero não permitida:', error)
+        except TypeError as error:
+            print('Apenas números inteiros são permitidos:', error)
+        except:
+            print('Error {}'.format(sys.exc_info()[0]))
+            print('Error {}'.format(sys.exc_info()[1]))
+
+calc = Calculadora()
+calc.dividir(10, 0)
+calc.dividir('', 0)
+```
+
+## Executando mesmo com erro
+
+Crie um arquivo chamado elsefinally.py
+
+```python
+import sys
+
+class CalculaImposto:
+    def __init__(self, valorOriginal, percentual, tipo, parcelas = 1):
+        try:
+            self.valorOriginal = float(valorOriginal)
+            self.percentual = float(percentual)
+            self.tipo = str(tipo)
+            self.parcelas = parcelas
+        except TypeError as error:
+            print('Dados inválidos: ', error)
+        except:
+            print(sys.exc_info()[0])
+            print(sys.exc_info()[1])
+    def calcular(self):
+        try:
+            self.imposto = self.valorOriginal * (self.percentual / 100)
+            self.valorFinal = self.valorOriginal + self.imposto
+            self.valorParcelas = self.valorFinal / self.parcelas
+        except:            
+            print('Erro ao calcular o imposto e as parcelas')
+            print(sys.exc_info()[0])
+            print(sys.exc_info()[1])
+        else:            
+            print('Valor original:', self.valorOriginal)
+            print('{}: {} ({}%)'.format(self.tipo, self.imposto, self.percentual))
+            print('Valor total a pagar:', self.valorFinal)
+            print('Valor da Parcela:', self.valorParcelas)
+        finally:
+            print('Fim')
+
+calc = CalculaImposto(100, 8, 'ICMS')
+calc.calcular()
+calc = CalculaImposto(1050, 5, 'ISSC', 0)
+calc.calcular()
+```
 
 # Referências
 
@@ -856,3 +995,7 @@ Curso Python para Principiantes - https://www.youtube.com/watch?v=chPhlsHoEPo (C
 Aulas Python - 059 - POO I: Sintaxe Básica, Construtor e Métodos - https://www.youtube.com/watch?v=lsPZTMJ9I6Q
 
 Aulas Python - 060 - POO II: Atributos, Associações e Funções - https://www.youtube.com/watch?v=5FCA0SDvxcI
+
+11 - Python - Tratamento de erros em python - https://www.youtube.com/watch?v=UTW5h_Nahr4
+
+8. Errors and Exceptions - https://docs.python.org/3/tutorial/errors.html
